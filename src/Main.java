@@ -153,7 +153,7 @@ public class Main {
      * @return
      */
     static double getHypotenuse(double cathetus1, double cathetus2){
-        if (cathetus1 <= 0 || cathetus2 <=0) {
+        if (cathetus1 <= 0 || cathetus2 <= 0) {
             System.out.println("Длинна катетов должна быть больше 0");
         }
         return  Double.parseDouble(getFormatUnified(Math.sqrt(Math.pow(cathetus1, 2) + Math.pow(cathetus2, 2))));
