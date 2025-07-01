@@ -52,9 +52,9 @@ class JavaJabki3Test {
     // Задание 6
     @Test
     public void averageOfThreeNumbersTest(){
-        Assertions.assertEquals(2.5,Main.averageOfThreeNumbers(new double[]{2.5, 4, 1}));
+        Assertions.assertEquals(2.5, Main.averageOfThreeNumbers(new double[]{2.5, 4, 1}));
         // провалится, так как внутри проверка на 3 числа.
-        Assertions.assertEquals(2.5,Main.averageOfThreeNumbers(new double[]{2.5, 4, 3, 0.5}));
+        Assertions.assertEquals(2.5, Main.averageOfThreeNumbers(new double[]{2.5, 4, 3, 0.5}));
     }
     // Задание 7
     @Test
