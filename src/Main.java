@@ -38,6 +38,7 @@ public class Main {
     }
     /**
      * возвращает сумму целых чисел из массива/списка Задание 1
+     * не так понял задание переделаем)
      * @param numbers - массив int
      * @return - сумма четных чисел
      */
@@ -52,13 +53,31 @@ public class Main {
         }
         return sum;
     }
+
+    /**
+     *  Функция возвращает сумму чисел между двумя числами. Задание 1
+     * @param num1
+     * @param num2
+     * @return
+     */
+    static Integer sumRange(int num1, int num2){
+        int sum = 0;
+        if (num1 > num2){
+            System.out.println("Первое число должно быть меньше второго.");
+            return null;
+        }
+        for (int i = num2; i >= num1; i--){
+            sum += i;
+        }
+        return sum;
+    }
     /**
      * Возвращает сумму двух целых чисел Задание 2
      * @param num1
      * @param num2
      * @return
      */
-    static  int add(int num1, int num2){
+    static int add(int num1, int num2){
         if (num1 == 0 || num2 == 0){
             System.out.println("А смысл?");
         }
@@ -74,7 +93,7 @@ public class Main {
         if (str2 == null || str1 == null){
             System.out.println("А смысл?");
         }
-        return  str1 + str2;
+        return str1 + str2;
     }
     /**
      * Примитивный поиск максимума Задание 3
@@ -108,7 +127,7 @@ public class Main {
             fact = fact * num;
             num--;
         }
-        return  fact;
+        return fact;
     }
     /**
      *  Расчет площади круга задание 5
@@ -119,7 +138,7 @@ public class Main {
         if (radius <= 0) {
             System.out.println("Радиус должен быть больше нуля, если ноль то это точка,а она площади не имеет");
         }
-        double p =  3.14159;
+        double p = 3.14159;
         return Double.parseDouble(getFormatUnified(p * (radius * radius)));
     }
     /**
@@ -132,7 +151,7 @@ public class Main {
         if (side1 <= 0 || side2 <= 0) {
             System.out.println("Стороны должны быть больше нуля");
         }
-        return Double.parseDouble(getFormatUnified(side1*side2));
+        return Double.parseDouble(getFormatUnified(side1 * side2));
     }
     /**
      *  Возвращает арифметическое для 3 чисел Задание 6

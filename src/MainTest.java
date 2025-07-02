@@ -1,15 +1,19 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class JavaJabki3Test {
+class MainTest {
     // Задание 1
     @Test
     public void sumRangeTest(){
         Assertions.assertEquals(5, Main.sumRange(new int[] {1, 2, 3}) );
         Assertions.assertEquals(6, Main.sumRange(new int[] {1, 2, 3}) );
         Assertions.assertNotNull(Main.sumRange(new int[] {}) );
+    }
+    @Test
+    public void sumRangeTestReal(){
+        Assertions.assertEquals(6, Main.sumRange(1, 3) );
+        Assertions.assertEquals(6, Main.sumRange(-5, 5) );
+        Assertions.assertNotNull(Main.sumRange(5, 2));
     }
     // Задание 2
     @Test
