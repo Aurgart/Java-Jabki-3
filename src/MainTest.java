@@ -2,16 +2,16 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class MainTest {
-    // Задание 1
 
+    // Задание 1
     @Test
     public void sumRangeTest() {
         Assertions.assertEquals(6, Main.sumRange(1, 3));
         Assertions.assertEquals(6, Main.sumRange(-5, 5));
         Assertions.assertNotNull(Main.sumRange(5, 2));
     }
-    // Задание 2
 
+    // Задание 2
     @Test
     public void addIntTest() {
         Assertions.assertEquals(9, Main.add(4, 5));
