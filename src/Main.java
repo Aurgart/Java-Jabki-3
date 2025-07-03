@@ -122,8 +122,7 @@ public class Main {
         if (radius <= 0) {
             System.out.println("Радиус должен быть больше нуля, если ноль то это точка,а она площади не имеет");
         }
-        double p = 3.14159;
-        return Double.parseDouble(getFormatUnified(p * (radius * radius)));
+        return Double.parseDouble(getFormatUnified(Math.PI * Math.pow(radius, 2)));
     }
     /**
      * Расчет площади прямоугольника задание 5
