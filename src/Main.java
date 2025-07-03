@@ -18,7 +18,7 @@ public class Main {
     * */
         System.out.println("Домашка два, погнали.");
         // Задание 1
-        System.out.println("Задание 1: " + sumRange(new int[]{1, 222, -99, 114}));
+        System.out.println("Задание 1: " + sumRange( -99, 114));
         // Задание 2.1
         System.out.println("Задание 2.1: " + add(278, -299));
         // Задание 2.2
@@ -37,36 +37,18 @@ public class Main {
         System.out.println("Задание 7: " + getHypotenuse(0.5, 2.7));
     }
     /**
-     * возвращает сумму целых чисел из массива/списка Задание 1
-     * не так понял задание переделаем)
-     * @param numbers - массив int
-     * @return - сумма четных чисел
-     */
-    static Integer sumRange(int[] numbers){
-        if (numbers.length == 0 ){
-            System.out.println("Массив не должен быть из нуля элементов");
-            return null;
-        }
-        int sum = 0;
-        for (int i = 0; i < numbers.length; i++){
-            sum += numbers[i];
-        }
-        return sum;
-    }
-
-    /**
-     *  Функция возвращает сумму чисел между двумя числами. Задание 1
+     * Функция возвращает сумму чисел между двумя числами. Задание 1
      * @param num1
      * @param num2
      * @return
      */
-    static Integer sumRange(int num1, int num2){
+    static Integer sumRange(int num1, int num2) {
         int sum = 0;
-        if (num1 > num2){
+        if (num1 > num2) {
             System.out.println("Первое число должно быть меньше второго.");
             return null;
         }
-        for (int i = num2; i >= num1; i--){
+        for (int i = num2; i >= num1; i--) {
             sum += i;
         }
         return sum;
@@ -77,11 +59,11 @@ public class Main {
      * @param num2
      * @return
      */
-    static int add(int num1, int num2){
-        if (num1 == 0 || num2 == 0){
+    static int add(int num1, int num2) {
+        if (num1 == 0 || num2 == 0) {
             System.out.println("А смысл?");
         }
-        return  num1 + num2;
+        return num1 + num2;
     }
     /**
      * Возвращает конкатенацию слов Задание 2
@@ -89,8 +71,8 @@ public class Main {
      * @param str2
      * @return
      */
-    static String add( String  str1, String str2){
-        if (str2 == null || str1 == null){
+    static String add(String str1, String str2) {
+        if (str2 == null || str1 == null) {
             System.out.println("А смысл?");
         }
         return str1 + str2;
@@ -100,13 +82,15 @@ public class Main {
      * @param numbers - массив чисел
      * @return - максимальное
      */
-    static Integer findMax(int[] numbers){
-        if (numbers == null || numbers.length == 0){
+    static Integer findMax(int[] numbers) {
+        if (numbers == null || numbers.length == 0) {
             return null;
         }
-        int max  = numbers[0];
-        for (int i = 1; i < numbers.length; i++){
-            max = max > numbers[i] ? max : numbers[i];
+        int max = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if (max < numbers[i]) {
+                max = numbers[i];
+            }
         }
         return max;
     }
@@ -115,26 +99,26 @@ public class Main {
      * @param num - целое число.
      * @return - факториал
      */
-    static int factorial(int num){
-        if (num < 0){
+    static int factorial(int num) {
+        if (num < 0) {
             System.out.println("Факториал возможен только по положительным числам, и нулю.");
-            return  0;
+            return 0;
         } else if (num == 0) {
-            return  1;
+            return 1;
         }
         int fact = num;
-        while(num > 0) {
+        while (num > 0) {
             fact = fact * num;
             num--;
         }
         return fact;
     }
     /**
-     *  Расчет площади круга задание 5
+     * Расчет площади круга задание 5
      * @param radius - радиус круга
-     * Добавил тут проверку на if как 5 задание из if-else
-     * */
-    static double figureArea(double radius){
+     *               Добавил тут проверку на if как 5 задание из if-else
+     */
+    static double figureArea(double radius) {
         if (radius <= 0) {
             System.out.println("Радиус должен быть больше нуля, если ноль то это точка,а она площади не имеет");
         }
@@ -142,28 +126,28 @@ public class Main {
         return Double.parseDouble(getFormatUnified(p * (radius * radius)));
     }
     /**
-     *  Расчет площади прямоугольника задание 5
+     * Расчет площади прямоугольника задание 5
      * @param side1 - первая сторона
      * @param side2 - вторая сторона
-     * Добавил тут проверку на if как 5 задание из if-else
-     * */
-    static double figureArea(double side1, double side2){
+     *              Добавил тут проверку на if как 5 задание из if-else
+     */
+    static double figureArea(double side1, double side2) {
         if (side1 <= 0 || side2 <= 0) {
             System.out.println("Стороны должны быть больше нуля");
         }
         return Double.parseDouble(getFormatUnified(side1 * side2));
     }
     /**
-     *  Возвращает арифметическое для 3 чисел Задание 6
-     *  Проверка на то что массив из 3 чисел в коде)
+     * Возвращает арифметическое для 3 чисел Задание 6
+     * Проверка на то что массив из 3 чисел в коде)
      * @param numbers - массив типа double
      * @return
      */
-    static double averageOfThreeNumbers(double[] numbers){
-        if(numbers.length != 3) {
+    static double averageOfThreeNumbers(double[] numbers) {
+        if (numbers.length != 3) {
             System.out.println("Тут не 3 числа");
         }
-        return Double.parseDouble(getFormatUnified((numbers[0] + numbers[1]+numbers[2])/numbers.length ));
+        return Double.parseDouble(getFormatUnified((numbers[0] + numbers[1] + numbers[2]) / numbers.length));
     }
     /**
      * Получение гипотенузы по 2 катетам.
@@ -171,11 +155,11 @@ public class Main {
      * @param cathetus2
      * @return
      */
-    static double getHypotenuse(double cathetus1, double cathetus2){
+    static double getHypotenuse(double cathetus1, double cathetus2) {
         if (cathetus1 <= 0 || cathetus2 <= 0) {
             System.out.println("Длинна катетов должна быть больше 0");
         }
-        return  Double.parseDouble(getFormatUnified(Math.sqrt(Math.pow(cathetus1, 2) + Math.pow(cathetus2, 2))));
+        return Double.parseDouble(getFormatUnified(Math.sqrt(Math.pow(cathetus1, 2) + Math.pow(cathetus2, 2))));
     }
 
     /**
@@ -184,7 +168,7 @@ public class Main {
      * @param number
      * @return
      */
-    static String getFormatUnified(double number){
+    static String getFormatUnified(double number) {
         DecimalFormatSymbols dcSymbol = new DecimalFormatSymbols();
         dcSymbol.setDecimalSeparator('.');
         DecimalFormat df = new DecimalFormat("0.00", dcSymbol);
